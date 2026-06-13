@@ -1,0 +1,6 @@
+Counting Rooms → after connected components
+Building Roads → after BFS/DFS
+Message Route → after shortest path
+Course Schedule → after topo sort
+Shortest Routes I → after Dijkstra
+
