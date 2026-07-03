@@ -37,7 +37,9 @@ public class bellmanford{
             {2, 3, 6}    // B -> C
         };
         algo a=new algo();
-        System.out.println(algo.bellmanford1(V,edges,0));
+        for(int i=0;i<V;i++){
+        System.out.println(algo.bellmanford1(V,edges,i));
+        }
 
     }
 }
