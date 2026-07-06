@@ -22,3 +22,26 @@ class Solution{
         return ans;
     }
 }
+class Solution2{
+    public void ans2(int[] candidates,int target,List<List<Integer>> ans,List<Integer> ds,int idx){
+        if(idx==candidates.length){
+            if(target==0){
+                ans.add(new ArrayList<>(ds));
+                return;
+            }
+        }
+        if(target>=candidates[idx]){
+            ds.add(candidates[idx]);
+            ans2(candidates,target-candidates[idx],ans,ds,idx);
+            ds.remove(ds.size()-1);
+        }
+        ans2(candidates,target,ans,ds,idx+1);
+    }
+    public List<List<Integer>> answer(int[] candidates,int target){
+        
+        List<List<Integer>> ans=new ArrayList<>();
+        List<Integer> nums=new ArrayList<>();
+        ans2(candidates,target,ans,nums,0);
+        return ans;
+    }
+}
