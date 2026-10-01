@@ -3,6 +3,7 @@ import java.util.Arrays;
 public class Solution {
     int[][] dp;
     String a, b;
+    StringBuffer ans;
 
     Solution(String a, String b) {
         this.a = a;
@@ -14,8 +15,10 @@ public class Solution {
     public int lcs(int i, int j) {
         if (i >= a.length() || j >= b.length()) return 0;
         if (dp[i][j] != -1) return dp[i][j];
-        if (a.charAt(i) == b.charAt(j)) 
+        if (a.charAt(i) == b.charAt(j)) {
+            ans.append(a.charAt(i));
             return dp[i][j] = 1 + lcs(i+1, j+1);
+        }
         return dp[i][j] = Math.max(lcs(i+1, j), lcs(i, j+1));
     }
 
